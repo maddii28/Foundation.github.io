@@ -6,58 +6,72 @@
   <title>Veena Sharma - Yogmaya Terracotta</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #f2f4f8;
+      background: #fff8f0;
       color: #333;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     .profile {
       text-align: center;
     }
     .profile img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-
+      width: 60%;
+      max-height: 400px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
     .name {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
     }
     .title {
-      font-size: 18px;
-      color: #666;
+      font-size: 20px;
+      color: #888;
     }
     .about {
-      margin: 20px 0;
+      margin: 30px 0;
+      font-size: 16px;
+      line-height: 1.6;
     }
     .links a {
       display: inline-block;
-      margin: 10px;
+      margin: 10px 15px;
       text-decoration: none;
-      color: #007bff;
+      color: #d35400;
+      font-weight: 500;
+    }
+    .links img {
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 8px;
     }
     .gallery {
-      margin-top: 30px;
+      margin-top: 40px;
+      text-align: center;
     }
     .gallery h2 {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
     .gallery img {
-      width: 180px;
+      width: 28%;
       margin: 10px;
-      border-radius: 10px;
+      border-radius: 12px;
       object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 600px) {
+      .gallery img {
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -67,8 +81,10 @@
       <img src="Images/7.jpeg" alt="Veena Sharma" />
       <div class="name">Veena Sharma</div>
       <div class="title">President - Yogmaya Terracotta</div>
-      <p>
-        <a href="#" onclick="window.open('https://wa.me/917982903676')">WhatsApp</a>
+      <p class="links">
+        <a href="tel:+917982903676"><img src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Phone" />+91 79829 03676</a>
+        <a href="https://wa.me/917982903676" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" alt="WhatsApp" />WhatsApp</a>
+        <a href="https://instagram.com/yogmayaterracotta" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram" />Instagram</a>
       </p>
     </div>
     <div class="about">
@@ -77,31 +93,15 @@
         I started my journey by making terracotta jewelry using a special kind of mud called Pokhran mitti from Rajasthan. I joined the NCUI incubation center and eventually became the treasurer of a small Self-Help Group, where my work received more support and recognition. Along with my team, I create beautiful, handmade jewelry that celebrates the richness of Indian culture. Today, I also teach other women this craft, helping them earn a living and become independent—just like I did.
       </p>
     </div>
-    <div class="links">
-      <h3>Links</h3>
-      <a href="tel:+917982903676">📞 +91 79829 03676</a>
-      <a href="https://instagram.com/yogmayaterracotta" target="_blank">📸 Yogmaya Terracotta (Instagram)</a>
-    </div>
     <div class="gallery">
       <h2>🖼️ Gallery</h2>
-      <div id="gallery"></div>
+      <img src="Images/1.jpeg" alt="Gallery Image 1">
+      <img src="Images/2.jpeg" alt="Gallery Image 2">
+      <img src="Images/3.jpeg" alt="Gallery Image 3">
+      <img src="Images/4.jpeg" alt="Gallery Image 4">
+      <img src="Images/5.jpeg" alt="Gallery Image 5">
+      <img src="Images/6.jpeg" alt="Gallery Image 6">
     </div>
   </div>
-
-  <script>
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbyi-t2j_fa0UF7ClGNf_pXJwb0Fbuk_3FNZCEtYmBbrbaJ5J-AhKLl6m0aw7VlS4jM5cg/exec";
-
-    fetch(scriptUrl)
-      .then(response => response.json())
-      .then(images => {
-        const gallery = document.getElementById("gallery");
-        images.forEach(image => {
-          const img = document.createElement("img");
-          img.src = image.url;
-          img.alt = image.name;
-          gallery.appendChild(img);
-        });
-      });
-  </script>
 </body>
 </html>
