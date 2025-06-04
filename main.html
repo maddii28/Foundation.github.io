@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veena Sharma - Yogmaya Terracotta</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f2f4f8;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .profile {
+      text-align: center;
+    }
+    .profile img {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .title {
+      font-size: 18px;
+      color: #666;
+    }
+    .about {
+      margin: 20px 0;
+    }
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      text-decoration: none;
+      color: #007bff;
+    }
+    .gallery {
+      margin-top: 30px;
+    }
+    .gallery h2 {
+      margin-bottom: 10px;
+    }
+    .gallery img {
+      width: 180px;
+      margin: 10px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile">
+      <img src="https://via.placeholder.com/150" alt="Veena Sharma" />
+      <div class="name">Veena Sharma</div>
+      <div class="title">President - Yogmaya Terracotta</div>
+      <p>
+        <a href="#" onclick="window.open('https://wa.me/917982903676')">WhatsApp</a>
+      </p>
+    </div>
+    <div class="about">
+      <h3>About Me</h3>
+      <p>
+        I started my journey by making terracotta jewelry using a special kind of mud called Pokhran mitti from Rajasthan. I joined the NCUI incubation center and eventually became the treasurer of a small Self-Help Group, where my work received more support and recognition. Along with my team, I create beautiful, handmade jewelry that celebrates the richness of Indian culture. Today, I also teach other women this craft, helping them earn a living and become independent—just like I did.
+      </p>
+    </div>
+    <div class="links">
+      <h3>Links</h3>
+      <a href="tel:+917982903676">📞 +91 79829 03676</a>
+      <a href="https://instagram.com/yogmayaterracotta" target="_blank">📸 Yogmaya Terracotta (Instagram)</a>
+    </div>
+    <div class="gallery">
+      <h2>🖼️ Gallery</h2>
+      <div id="gallery"></div>
+    </div>
+  </div>
+
+  <script>
+    // Replace with your deployed Google Apps Script web app URL
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbyi-t2j_fa0UF7ClGNf_pXJwb0Fbuk_3FNZCEtYmBbrbaJ5J-AhKLl6m0aw7VlS4jM5cg/exec";
+
+    fetch(scriptUrl)
+      .then(response => response.json())
+      .then(images => {
+        const gallery = document.getElementById("gallery");
+        images.forEach(image => {
+          const img = document.createElement("img");
+          img.src = image.url;
+          img.alt = image.name;
+          gallery.appendChild(img);
+        });
+      });
+  </script>
+</body>
+</html>
